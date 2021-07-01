@@ -1,15 +1,18 @@
-class Slot
+class GraphSlot
 {
   constructor()
   {
-    
   }
 }
 
-class Node
+class GraphNode
 {
+  name: string;
+  slots: GraphSlot[];
+  
   constructor()
   {
-    
+    this.name = "hello";
+    this.slots = [];
   }
 }
