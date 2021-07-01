@@ -10,8 +10,10 @@ before_script:
 script:
 #  - npm init --yes # Create package.json
 #  - tsc --init # Create tsconfig.json
-- tsc # Compile
 # - ls -l
+# Compile
+- tsc
+# Show main.js content
 - cat main.js
 
 deploy:
