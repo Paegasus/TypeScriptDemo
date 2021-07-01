@@ -12,6 +12,7 @@ script:
 #  - tsc --init # Create tsconfig.json
 - tsc # Compile
 # - ls -l
+- cat main.js
 
 deploy:
   edge: true
