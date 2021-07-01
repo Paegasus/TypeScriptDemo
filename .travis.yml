@@ -8,17 +8,16 @@ before_script:
   - npm install -g typescript
 
 script:
-  - npm init --yes
-  - tsc --init
-  - ls -l
-  - cat package.json
-  - cat tsconfig.json
+#  - npm init --yes # Create package.json
+#  - tsc --init # Create tsconfig.json
+- tsc # Compile
+# - ls -l
 
 deploy:
   edge: true
   provider: releases
-  token: $GITHUB_API_KEY
-  file: $TRAVIS_BUILD_DIR/tsconfig.json
+  token: $GITHUB_TOKEN
+  file: $TRAVIS_BUILD_DIR/main.js
   name: dev-build-$TRAVIS_TAG
   release_notes: Automatic build of $TRAVIS_BRANCH ($TRAVIS_COMMIT) built by Travis CI on $(date +'%F %T %Z').
   prerelease: true
@@ -28,4 +27,4 @@ deploy:
     tags: true
 
 after_deploy:
-  - rm -rf $TRAVIS_BUILD_DIR/tsconfig.json
+  - rm -rf $TRAVIS_BUILD_DIR/main.js
